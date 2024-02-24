@@ -75,16 +75,20 @@
     </div>
     <script>
 
-        function count() {
-            const word = document.getElementById("input").value;
-            const splitword = word.trim().split(" ");
-            const result = splitword.length;
-            console.log(result);
-            let count = document.getElementById('result');
-            count.innerHTML = result;
-        }
-        const text = document.getElementsByClassName('inputdiv');
-        console.log(text);
+function count() {
+    const word = document.getElementById("input").value;
+
+    const splitword = word.trim().split(/\s+|[,.;:!?()]/);
+
+    const filteredSplitword = splitword.filter(str => str.length > 0);
+    
+    const result = filteredSplitword.length;
+    console.log(result);
+    
+    let count = document.getElementById('result');
+    count.innerHTML = result;
+}
+
       
     </script>
 </body>
